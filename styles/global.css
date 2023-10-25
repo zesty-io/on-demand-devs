@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+.contact-overlay {
+  background: url("../public/assets/contact-page/overlay.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+
+ul.navlinks li {
+  position: relative;
+}
+
+
+ul.navlinks li::after  {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  top: 150%;
+  left: 0px;
+  background: #F65A28;
+  border-radius: 100px;
+  transition: 0.15s ease-in-out;
+}
+
+ul.navlinks li:hover::after  {
+  width: 50%;
+  transition: 0.15s ease-in-out;
+}
+
+
+img.team-profile {
+  transition: .2s ease-in-out;
+}
+
+
+img.team-profile:hover {
+  transition: .2s ease-in-out;
+  filter: grayscale(0);
+  transform: translate(-10px, -10px);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
+/* Our work section */
+
+.project-card .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card:hover .project-image { 
+  object-position: bottom center;
+}
+
+.project-image {
+	width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: all 7s ease-in-out;
+}
+
+.project-card:hover .project-card-overlay {
+  transition: .2s ease-in-out;
+  visibility: initial;
+}
+
+.project-card-overlay {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  
+
+}
+
+/* End of our work section */
+
+
+span.error-message {
+  color: #F05858;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.hero {
+  background: linear-gradient(90deg, #1f2125 0%, #1f2125 35%, #1f2125b0 100%);
+  position: relative;
+}
+
+
+img.hero-image{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+
+
+.hero-cta {
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero-cta:hover {
+  transform: translate(10px, 10px);
+  transition: .1s ease-in-out;
+}
+
+.hero-cta:hover.hero-cta::after {
+  transform: translate(-10px, -10px);
+  transition: .1s ease-in-out;
+}
+
+
+.hero-cta::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #F65A28;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  border-radius: 4px;
+  transition: .1s ease-in-out;
+
+}
+
+
+
+
+
+
+
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
