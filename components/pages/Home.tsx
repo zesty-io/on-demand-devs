@@ -23,7 +23,7 @@ interface TeamProps {
   profile: string;
 }
 
-const Homepage = ({ content }: any) => {
+const Home = ({ content }: any) => {
   const previewPassword = process.env.ZESTY_PREVIEW_PASSWORD;
   const {
     subheader,
@@ -43,6 +43,7 @@ const Homepage = ({ content }: any) => {
   const [team, setTeam] = React.useState<TeamProps[]>([]);
 
   React.useEffect(() => {
+    console.log(previewPassword);
     if (previewPassword) {
       try {
         fetch(customRoute)
@@ -77,11 +78,7 @@ const Homepage = ({ content }: any) => {
             <CtaButton>{button_name}</CtaButton>
           </div>
 
-          <img
-            className="hero-image"
-            src={content?.image?.data[0].url}
-            alt="Hero"
-          />
+          <img className="hero-image" src={image?.data[0].url} alt="Hero" />
         </section>
 
         <section
@@ -164,4 +161,4 @@ const Homepage = ({ content }: any) => {
   );
 };
 
-export default Homepage;
+export default Home;
