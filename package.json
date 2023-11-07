@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
-    "@zesty-io/nextjs-sync": "^0.0.2",
     "aos": "^2.3.4",
     "axios": "^1.5.1",
     "class-variance-authority": "^0.7.0",
