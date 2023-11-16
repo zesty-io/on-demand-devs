@@ -1,7 +1,6 @@
 
 ###start
 # These are added during the post install and then the gitignore rules removed
-.zesty
 views/zesty
 ###end
 
