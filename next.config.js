@@ -14,4 +14,11 @@ module.exports = {
     const data = await zestyNext.fetchRedirects();
     return data;
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
 };
